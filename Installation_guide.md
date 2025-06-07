@@ -113,6 +113,22 @@ sudo cp /etc/X11/xinit/xinitrc ~/.xinitrc
 nvim ~/.xinitrc
 // 注释掉结尾的4行
 // 添加exec dwm
-
 // startx启动dwm
+```
+
+## 安装openssh
+- 下载
+```c
+sudo pacman -S openssh
+sudo systemctl start sshd
+sudo systemctl enable sshd
+```
+## 安装nerd fonts
+- 下载
+```c
+sudo pacman -S fontconfig
+mkdir -p ~/.local/share/fonts
+mv CascadiaMono/*.tff ~/.local/share/fonts
+fc-cache -fv
+fc-list | grep -i nerd
 ```
