@@ -87,35 +87,6 @@ sudo pacman -Sc
 sudo pacman-key -lsign-key "builder@archlinuxarm.org"
 ```
 
-## 安装dwm
-
-- 安装ziti
-
-```c
-sudo pacman -S ttf-dejavu ttf-liberation noto-fonts
-```
-
-- 安装dwm
-
-```c
-git clone https://aur.archlinux.org/dwm.git
-cd dwm/
-tar -zxvf dwm-6.5.tar.gz
-cd dwm-6.5
-make
-sudo make clean install
-```
-
-- 编辑xinitrc
-
-```c
-sudo cp /etc/X11/xinit/xinitrc ~/.xinitrc
-nvim ~/.xinitrc
-// 注释掉结尾的4行
-// 添加exec dwm
-// startx启动dwm
-```
-
 ## 安装openssh
 - 下载
 ```c
@@ -131,4 +102,94 @@ mkdir -p ~/.local/share/fonts
 mv CascadiaMono/*.tff ~/.local/share/fonts
 fc-cache -fv
 fc-list | grep -i nerd
+```
+
+## 安装dwm
+
+- 安装ziti
+
+```c
+sudo pacman -S ttf-dejavu ttf-liberation noto-fonts
+```
+
+- 安装dwm
+
+```c
+sudo pacman -S xorg-server xorg-xinit libxft libxinerama
+sudo pacman -S alacritty
+mkdir suckless
+cd suckless
+git clone https://git.suckless.org/dwm
+git clone https://git.suckless.org/dmenu
+git clone https://git.suckless.org/st
+git clone https://git.suckless.org/slstatus
+
+sudo make clean install
+```
+
+- 编辑xinitrc
+
+```c
+sudo cp /etc/X11/xinit/xinitrc ~/.xinitrc
+
+nvim ~/.xinitrc
+// 注释掉结尾的4行
+// 添加exec dwm
+// startx启动dwm
+```
+
+- 通过登录管理器进入DWM
+使用root权限到/usr/share/xsessions/新建一个文件，名称可以为dwm.desktop，内容如下：
+```c
+# /usr/share/xsessions/dwm.desktop
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=Dwm
+Comment=Dynamic window manager
+Exec=dwm
+Icon=dwm
+Type=XSession
+```
+- 安装登录管理器
+```c
+sudo pacman -S sddm
+```
+- 安装sddm主题
+
+```c
+使用root权限到/usr/share/xsessions/新建一个文件，名称可以为dwm.desktop，内容如下：
+
+# /usr/share/xsessions/dwm.desktop
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=Dwm
+Comment=Dynamic window manager
+Exec=dwm
+Icon=dwm
+Type=XSession
+```
+
+```c
+sudo systemctl enable sddm
+sudo systemctl start sddm
+```
+
+- 安装yay
+```c
+sudo pacman -S base-devel git
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+```
+- 安装chrome
+```c
+yay -S google-chrome
+```
+如果部分依赖包下载失败的话，可以去arch官方社区的package下搜索对应的文件安装
+
+用代理启动google-chome
+```c
+google-chrome-stable --proxy-server="socks://127.0.0.1:1080"
 ```
