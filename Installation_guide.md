@@ -155,7 +155,6 @@ Type=XSession
 ```c
 sudo pacman -S sddm
 ```
-- 安装sddm主题
 
 ```c
 使用root权限到/usr/share/xsessions/新建一个文件，名称可以为dwm.desktop，内容如下：
@@ -174,6 +173,61 @@ Type=XSession
 ```c
 sudo systemctl enable sddm
 sudo systemctl start sddm
+```
+- 安装sddm主题
+  
+- 安装补丁
+```c
+下载alpha, barpadding, autostart, uselessgap
+
+//patch < 补丁文件来安装
+//如果有冲突手动解决
+```
+
+- 安装picom
+```c
+sudo pacman -S picom
+sudo nvim /etc/xdg/picom.conf
+
+//在rules节点增加如下内容，使窗口透明
+rules: ({
+  match = "class_g = 'URxvt' && focused";
+  opacity = 0.9;
+}, {
+  match = "(class_g = 'URxvt' || class_g = 'Alacritty')"
+          " && !focused";
+  opacity = 0.6;
+})
+```
+- 安装autostart插件的script
+```c
+//参考配置文件
+https://gitee.com/jzz777/dwm
+
+赋予可执行权限
+
+sudo pacman -S bc xorg-xsetrootdate
+```
+
+- 安装输入法
+https://www.cnblogs.com/klelee/p/archlinux-fcitx5.html
+
+- 安装壁纸
+```c
+sudo pacman -S nitrogen
+nitrogen /path/to/image/directory/
+```
+
+## 安装其他应用
+- 安装rofi
+```c
+sudo pacman -S rofi
+github.com/adi1090x/rofi
+```
+
+- 安装amixer
+```c
+sudo pacman -S alsa-utils
 ```
 
 - 安装yay
