@@ -106,7 +106,7 @@ fc-list | grep -i nerd
 
 ## 安装dwm
 
-- 安装ziti
+- 安装字体
 
 ```c
 sudo pacman -S ttf-dejavu ttf-liberation noto-fonts
@@ -187,7 +187,10 @@ sudo systemctl start sddm
 - 安装picom
 ```c
 sudo pacman -S picom
-sudo nvim /etc/xdg/picom.conf
+mkdir ~/.config/picom
+cp /etc/xdg/picom.conf ~/.config/picom
+nvim ~/.config/picom/picom.conf
+//将use-damage = false
 
 //在rules节点增加如下内容，使窗口透明
 rules: ({
