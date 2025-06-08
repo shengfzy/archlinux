@@ -191,10 +191,10 @@ sudo nvim /etc/xdg/picom.conf
 
 //在rules节点增加如下内容，使窗口透明
 rules: ({
-  match = "class_g = 'URxvt' && focused";
+  match = "class_g = 'Alacritty' && focused";
   opacity = 0.9;
 }, {
-  match = "(class_g = 'URxvt' || class_g = 'Alacritty')"
+  match = "(class_g = 'Alacritty' || class_g = 'Alacritty')"
           " && !focused";
   opacity = 0.6;
 })
