@@ -226,6 +226,12 @@ https://www.lazyvim.org/installation
 - 安装输入法
 https://www.cnblogs.com/klelee/p/archlinux-fcitx5.html
 
+- 安装archlinuxcn仓库
+https://wiki.archlinuxcn.org/wiki/Arch_Linux_%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA%E4%BB%93%E5%BA%93
+
+- 安装maple字体
+https://github.com/subframe7536/maple-font
+
 - 安装rofi
 ```c
 sudo pacman -S rofi
@@ -253,4 +259,10 @@ yay -S google-chrome
 用代理启动google-chome
 ```c
 google-chrome-stable --proxy-server="socks://127.0.0.1:1080"
+```
+## 安装hyprland
+
+```c
+sudo pacman -S kitty
+yay -S hyprland-git
 ```
