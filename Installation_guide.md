@@ -38,6 +38,8 @@ cfdisk
 
 [archlinux | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror](https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/)
 
+Server = https://mirrors.aliyun.com/archlinux/$repo/os/$arch
+
 - 更新软件包缓存
 
 ```c
@@ -49,7 +51,7 @@ pacman -Syyu
 如果zen内核找不到，就把zen关键字去掉，安装普通内核
 
 ```c
-pacstrap -K /mnt base base-devel linux-zen linux-zen-firmware linux-zen-headers grub git openssh networkmanager neovim efibootmgr
+pacstrap -K /mnt base base-devel linux-zen linux-firmware linux-zen-headers grub git openssh networkmanager neovim efibootmgr
 ```
 
 - 配置系统
@@ -138,19 +140,6 @@ nvim ~/.xinitrc
 // startx启动dwm
 ```
 
-- 通过登录管理器进入DWM
-使用root权限到/usr/share/xsessions/新建一个文件，名称可以为dwm.desktop，内容如下：
-```c
-# /usr/share/xsessions/dwm.desktop
-
-[Desktop Entry]
-Encoding=UTF-8
-Name=Dwm
-Comment=Dynamic window manager
-Exec=dwm
-Icon=dwm
-Type=XSession
-```
 - 安装登录管理器
 ```c
 sudo pacman -S sddm
@@ -175,6 +164,8 @@ sudo systemctl enable sddm
 sudo systemctl start sddm
 ```
 - 安装sddm主题
+
+- 通过登录管理器进入DWM
   
 - 安装补丁
 ```c
