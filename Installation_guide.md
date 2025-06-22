@@ -202,9 +202,7 @@ https://gitee.com/jzz777/dwm
 
 sudo pacman -S bc xorg-xsetrootdate
 ```
-
-- 安装输入法
-https://www.cnblogs.com/klelee/p/archlinux-fcitx5.html
+-安装yazi
 
 - 安装壁纸
 ```c
@@ -213,6 +211,21 @@ nitrogen /path/to/image/directory/
 ```
 
 ## 安装其他应用
+
+- 安装miniforge配置python环境
+
+- 安装梯子
+
+- 安装oh-my-zsh
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"![image](https://github.com/user-attachments/assets/0e31059a-27dd-4cfa-aba1-721e20bb8b5c)
+```
+- 安装lazy-vim
+https://www.lazyvim.org/installation![image](https://github.com/user-attachments/assets/70a807f9-3875-4c54-b43c-41401afa69c5)
+
+- 安装输入法
+https://www.cnblogs.com/klelee/p/archlinux-fcitx5.html
+
 - 安装rofi
 ```c
 sudo pacman -S rofi
