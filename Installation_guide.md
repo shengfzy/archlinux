@@ -260,9 +260,22 @@ yay -S google-chrome
 ```c
 google-chrome-stable --proxy-server="socks://127.0.0.1:1080"
 ```
+
+- 安装xrandr
+```c
+sudo pacman -S xorg-xrandr
+xrandr --output eDP-1 --mode 1920x1080 --rate 60
+```
+
 ## 安装hyprland
 
 ```c
 sudo pacman -S kitty
 yay -S hyprland-git
+```
+### 创建虚拟桌面
+```bash
+# https://wiki.hypr.land/Configuring/Using-hyprctl/#output
+hyprctl output create headless test
+hyprctl output remove test
 ```
