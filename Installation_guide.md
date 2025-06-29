@@ -278,4 +278,8 @@ yay -S hyprland-git
 # https://wiki.hypr.land/Configuring/Using-hyprctl/#output
 hyprctl output create headless test
 hyprctl output remove test
+
+sudo pacman -S wayvnc
+wayvnc -o HDMI-A-1 0.0.0.0 5901
+wayvnc -o HEADLESS-2 0.0.0.0 5901
 ```
