@@ -105,6 +105,26 @@ mv CascadiaMono/*.tff ~/.local/share/fonts
 fc-cache -fv
 fc-list | grep -i nerd
 ```
+### 配置系统字体
+```bash
+# ~/.config/fontconfig/fonts.conf
+# 增加如下配置
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+    <alias>
+        <family>monospace</family>
+        <prefer>
+            <family>FiraCode Nerd Font Mono</family>
+        </prefer>
+    </alias>
+</fontconfig>
+
+fc-cache -fv
+fc-match monospace
+```
+### 配置kitty终端字体
+参考https://www.ypplog.cn/%e6%88%91%e5%8f%88%e6%8d%a2%e5%9b%9ekitty%e7%bb%88%e7%ab%af%e4%ba%86%ef%bc%88kitty%e7%bb%88%e7%ab%af%e7%be%8e%e5%8c%96%e9%85%8d%e7%bd%ae%ef%bc%89/
 
 ## 安装dwm
 
