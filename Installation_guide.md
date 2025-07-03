@@ -208,8 +208,7 @@ rules: ({
   match = "class_g = 'Alacritty' && focused";
   opacity = 0.9;
 }, {
-  match = "(class_g = 'Alacritty' || class_g = 'Alacritty')"
-          " && !focused";
+  match = "class_g = 'Alacritty' && !focused";
   opacity = 0.6;
 })
 ```
@@ -218,11 +217,13 @@ rules: ({
 //参考配置文件
 https://gitee.com/jzz777/dwm
 
+将suckless/dwm/script/autostart.sh 拷贝到~/.dwm/下
 赋予可执行权限
 
 sudo pacman -S bc xorg-xsetrootdate
 ```
 -安装yazi
+参考yazi官方github
 
 - 安装壁纸
 ```c
@@ -261,6 +262,16 @@ github.com/adi1090x/rofi
 - 安装amixer
 ```c
 sudo pacman -S alsa-utils
+
+nvim ~/.asoundrc
+添加如下内容
+defaults.pcm.card 1
+defaults.pcm.device 0
+defaults.ctl.card 1
+
+# 我有两张声卡 card 0:HDMI card 1: analog
+# 需要配置成默认使用card 1
+保存后重启生效
 ```
 
 - 安装yay
